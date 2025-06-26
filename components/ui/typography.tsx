@@ -26,7 +26,7 @@ const variantClasses: Record<TypographyVariant, string> = {
   h2: "text-4xl font-bold tracking-tight lg:text-5xl",
   h3: "text-3xl font-bold tracking-tight lg:text-4xl",
   h4: "font-bold text-3xl",
-  h5: "font-bold text-lg",
+  h5: "font-bold text-xl",
   h6: "font-bold text-sm",
   body1: "text-base",
   body2: "text-sm",
@@ -43,7 +43,7 @@ export const Typography: FC<TypographyProps> = ({
 }) => {
   if ((text && children) || (!text && !children)) {
     throw new Error(
-      "[Typography]: You must pass either 'text' or 'children', and not both"
+      "[Typography]: You must pass either 'text' or 'children', and not both",
     );
   }
 

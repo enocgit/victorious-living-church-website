@@ -34,7 +34,7 @@ const MissionItem = ({
       <Image src={image} alt="About" fill className="object-cover" />
       <article className="relative z-10 space-y-7 text-white">
         {title && (
-          <Typography variant="h2" className="max-w-96">
+          <Typography variant="h2" className="max-w-96 text-3xl sm:text-4xl">
             {title}
           </Typography>
         )}
@@ -46,7 +46,7 @@ const MissionItem = ({
 
 export default function Mission() {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2">
+    <div className="grid grid-cols-1 min-[380px]:grid-cols-2">
       <MissionItem
         color="#4E0D0D"
         title="Christ-Centered Teaching"

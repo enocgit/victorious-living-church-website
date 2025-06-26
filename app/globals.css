@@ -43,6 +43,7 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
   --spacing-vertical: 7rem;
+  --breakpoint-xsm: 450px;
 }
 
 :root {

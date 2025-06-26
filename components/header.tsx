@@ -16,11 +16,11 @@ export default function Header() {
   return (
     <header className="flex h-28 items-center justify-between px-6 shadow">
       {/* Logo */}
-      <Link href="/" className="mr-12 sm:mr-0">
+      <Link href="/" className="xsm:mr-10 mr-5 sm:mr-0">
         {/* <Image src="/logo.png" alt="logo" width={100} height={100} /> */}{" "}
         {/**TODO: Add logo */}
         <Typography variant="h6" className="max-w-[200px]">
-          Victorious Living Church International
+          VLCI
         </Typography>
       </Link>
       <nav className="hidden lg:block">
@@ -41,7 +41,7 @@ export default function Header() {
         </NavigationMenu>
       </nav>
       {/* Give Now Button */}
-      <div className="flex items-center gap-5 border-l pl-10">
+      <div className="xsm:pl-10 flex items-center gap-5 border-l pl-5">
         <Link href="/#">
           <Button className="bg-accent">Give Now</Button>
         </Link>
