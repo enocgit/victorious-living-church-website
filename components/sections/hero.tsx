@@ -9,9 +9,9 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative h-svh text-white flex items-center w-full"
+      className="relative flex h-[calc(100svh-7rem)] w-full items-center text-white"
     >
-      <div className="absolute inset-0 bg-[#240C00]/50 z-10" />
+      <div className="absolute inset-0 z-10 bg-[#240C00]/50" />
       <Image
         src={heroImage}
         alt="Hero"
@@ -19,7 +19,7 @@ export default function Hero() {
         className="object-cover"
         priority
       />
-      <div className="relative z-10 wrapper py-60 flex w-full">
+      <div className="wrapper relative z-10 flex w-full py-60">
         <BlockWithDescription
           classNames={{
             title: "max-w-3xl",

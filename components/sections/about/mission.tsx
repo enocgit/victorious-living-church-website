@@ -5,20 +5,28 @@ import aboutGridImage1 from "@/public/assets/about-grid-image-1.jpg";
 import aboutGridImage2 from "@/public/assets/about-grid-image-2.jpg";
 import aboutGridImage3 from "@/public/assets/about-grid-image-3.jpg";
 import aboutGridImage4 from "@/public/assets/about-grid-image-4.png";
+import { cn } from "@/lib/utils";
 
 const MissionItem = ({
   color,
   title,
   description,
   image,
+  className,
 }: {
   color?: string;
   title?: string;
   description?: string;
   image: string | StaticImageData;
+  className?: string;
 }) => {
   return (
-    <div className="relative px-32 py-40">
+    <div
+      className={cn(
+        "relative px-6 py-10 sm:px-14 sm:py-20 lg:px-32 lg:py-40",
+        className,
+      )}
+    >
       <div
         className="absolute inset-0 z-10 opacity-80"
         style={{ backgroundColor: color }}
@@ -38,7 +46,7 @@ const MissionItem = ({
 
 export default function Mission() {
   return (
-    <div className="grid grid-cols-2">
+    <div className="grid grid-cols-1 sm:grid-cols-2">
       <MissionItem
         color="#4E0D0D"
         title="Christ-Centered Teaching"
@@ -51,13 +59,14 @@ export default function Mission() {
         description="A family of believers supporting one another"
         image={aboutGridImage2}
       />
-      <MissionItem image={aboutGridImage4} />
+      <MissionItem image={aboutGridImage4} className="hidden sm:block" />
       <MissionItem
         color="#AB4F10"
         title="Purposeful Living"
         description="Equipping you to live out your calling"
         image={aboutGridImage3}
       />
+      <MissionItem image={aboutGridImage4} className="block sm:hidden" />
     </div>
   );
 }

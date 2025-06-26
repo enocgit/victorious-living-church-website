@@ -1,22 +1,22 @@
 import React from "react";
-import BlockWithDescription from "../block-with-description";
-import TitleWithSubheading from "../title-with-subheading";
-import { Button } from "../ui/button";
+import BlockWithDescription from "../../block-with-description";
+import TitleWithSubheading from "../../title-with-subheading";
+import { Button } from "../../ui/button";
 import Image from "next/image";
 import aboutImage from "@/public/assets/about-image.jpg";
-import Mission from "./about/mission";
+import Mission from "./mission";
 
-export default function About() {
+export default function AboutSection() {
   return (
     <section className="">
       <div className="pt-vertical">
-        <div className="wrapper grid grid-cols-2 items-center gap-7 pb-20">
+        <div className="wrapper grid grid-cols-1 items-center gap-7 pb-20 md:grid-cols-2">
           <Image
             src={aboutImage}
             alt="About"
             width={1200}
             height={756}
-            className="h-[756px] w-[610px] object-cover"
+            className="h-[300px] w-full object-cover md:h-[756px] md:w-[610px]"
           />
           <BlockWithDescription
             renderTitle={() => (

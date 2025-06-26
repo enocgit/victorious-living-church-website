@@ -6,8 +6,8 @@ import { Button } from "../ui/button";
 export default function PlanVisit() {
   return (
     <section className="">
-      <div className="pt-vertical">
-        <div className="wrapper grid grid-cols-2 items-center gap-7 pb-20">
+      <div className="py-vertical">
+        <div className="wrapper grid grid-cols-1 items-center gap-7 lg:grid-cols-2">
           <BlockWithDescription
             renderTitle={() => (
               <TitleWithSubheading
@@ -34,7 +34,7 @@ export default function PlanVisit() {
             allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            className="h-[756px] w-[610px] max-w-full"
+            className="h-[300px] w-full max-w-full md:h-[756px] lg:w-[610px]"
           ></iframe>
         </div>
       </div>
