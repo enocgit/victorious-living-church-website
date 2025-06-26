@@ -11,6 +11,7 @@ import {
 import { Typography } from "../ui/typography";
 import Image, { StaticImageData } from "next/image";
 import EventSunday from "@/public/assets/upcoming-event-sunday.jpg";
+import EventFundraising from "@/public/assets/upcoming-event-fund.jpg";
 
 const EventCard = ({
   dateTime,
@@ -90,7 +91,7 @@ export default function Events() {
               dateTime={new Date("Sun Oct 12 2025 08:30")}
               name="Fundraising"
               location="Kasoa, Ottaa City, Ghana"
-              image={EventSunday}
+              image={EventFundraising}
             />
           </div>
         </BlockWithDescription>
