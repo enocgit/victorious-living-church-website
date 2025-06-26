@@ -2,7 +2,7 @@ import { FC, HTMLProps, ReactNode } from "react";
 import { twMerge } from "tailwind-merge";
 
 type ElementTypes = "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p" | "span";
-type TypographyVariant =
+export type TypographyVariant =
   | "h1"
   | "h2"
   | "h3"

@@ -42,16 +42,17 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+  --spacing-vertical: 7rem;
 }
 
 :root {
-  --radius: 1.2rem;
+  --radius: 2rem;
   --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
+  --foreground: oklch(0.1897 0.0487 52.13);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
+  --card-foreground: oklch(0.1897 0.0487 52.13);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
+  --popover-foreground: oklch(0.1897 0.0487 52.13);
   --primary: oklch(0.5357 0.1384 48.21);
   --primary-foreground: oklch(0.985 0 0);
   --secondary: oklch(0.97 0 0);
@@ -70,7 +71,7 @@
   --chart-4: oklch(0.828 0.189 84.429);
   --chart-5: oklch(0.769 0.188 70.08);
   --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-foreground: oklch(0.1897 0.0487 52.13);
   --sidebar-primary: oklch(0.205 0 0);
   --sidebar-primary-foreground: oklch(0.985 0 0);
   --sidebar-accent: oklch(0.97 0 0);
@@ -125,12 +126,21 @@
   h3,
   h4,
   h5,
-  h6,
-  button {
+  h6 {
     @apply font-sans;
   }
   p,
   span {
     @apply font-nunito;
+  }
+
+  button {
+    @apply cursor-pointer font-sans;
+  }
+}
+
+@layer utilities {
+  .wrapper {
+    @apply mx-auto max-w-[1140px] px-4 sm:px-6 lg:px-8;
   }
 }
