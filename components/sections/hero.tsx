@@ -33,12 +33,15 @@ export default function Hero() {
     useDotButton(emblaApi);
 
   return (
-    <section id="hero" className="relative">
+    <section
+      id="hero"
+      className="relative flex h-[60svh] items-center lg:h-[calc(100svh-7rem)]"
+    >
       {/* Overlay */}
-      <div className="bg-foreground/50 absolute inset-0 z-10" />
+      <div className="bg-foreground/50 absolute inset-0 z-20" />
 
       {/* Content */}
-      <div className="absolute z-10 min-w-full py-60 text-white">
+      <div className="absolute z-30 min-w-full text-white">
         <BlockWithDescription
           className="wrapper"
           classNames={{
@@ -72,7 +75,7 @@ export default function Hero() {
       </div>
 
       {/* Carousel */}
-      <div className="embla" ref={emblaRef}>
+      <div className="embla absolute inset-0 z-10 size-full" ref={emblaRef}>
         <div className="embla__container h-[calc(100svh-7rem)]">
           {SLIDES.map((slide, idx) => (
             <div key={idx} className="embla__slide">

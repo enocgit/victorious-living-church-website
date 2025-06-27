@@ -22,7 +22,7 @@ type TypographyProps = HTMLProps<HTMLParagraphElement> & {
   );
 
 const variantClasses: Record<TypographyVariant, string> = {
-  h1: "text-6xl font-bold tracking-tighter lg:text-8xl",
+  h1: "text-5xl sm:text-6xl font-bold tracking-tighter lg:text-8xl",
   h2: "text-4xl font-bold tracking-tight lg:text-5xl",
   h3: "text-3xl font-bold tracking-tight lg:text-4xl",
   h4: "font-bold text-3xl",
