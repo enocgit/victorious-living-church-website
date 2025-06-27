@@ -26,6 +26,7 @@ const MissionItem = ({
         "relative px-6 py-10 sm:px-14 sm:py-20 lg:px-32 lg:py-40",
         className,
       )}
+      data-aos="fade-up"
     >
       <div
         className="absolute inset-0 z-10 opacity-80"

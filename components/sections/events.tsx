@@ -70,6 +70,16 @@ export default function Events() {
             <TitleWithSubheading
               title="Upcoming Events"
               subheading="Stay Connected"
+              subheadingProps={
+                {
+                  "data-aos": "fade-up",
+                } as unknown as React.ComponentProps<typeof Typography>
+              }
+              titleProps={
+                {
+                  "data-aos": "fade-up",
+                } as unknown as React.ComponentProps<typeof Typography>
+              }
             />
           )}
           renderDescription={() => (
@@ -79,8 +89,18 @@ export default function Events() {
               grow faith. Join us and be part of something meaningful.
             </>
           )}
+          descriptionProps={
+            {
+              "data-aos": "fade-up",
+              "data-aos-delay": "200",
+            } as unknown as React.ComponentProps<typeof Typography>
+          }
         >
-          <div className="flex flex-col gap-7">
+          <div
+            className="flex flex-col gap-7"
+            data-aos="fade-up"
+            data-aos-duration="2000"
+          >
             <EventCard
               dateTime={new Date("Sun Jun 29 2025 08:30")}
               name="Sunday Service"

@@ -12,6 +12,7 @@ import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import Fade from "embla-carousel-fade";
 import { DotButton, useDotButton } from "../embla-carousel-dot-button";
+import { Typography } from "../ui/typography";
 
 const SLIDES = [heroImage, breadcrumbBanner, aboutGridImage3];
 
@@ -48,9 +49,25 @@ export default function Hero() {
               title="Be the Light. Live the Word"
               subheading="Sharing the Love of Christ with every Soul"
               titleVariant="h1"
+              subheadingProps={
+                { "data-aos": "fade-up" } as unknown as React.ComponentProps<
+                  typeof Typography
+                >
+              }
+              titleProps={
+                {
+                  "data-aos": "fade-up",
+                  "data-aos-duration": "800",
+                  "data-aos-delay": "250",
+                } as unknown as React.ComponentProps<typeof Typography>
+              }
             />
           )}
-          renderButton={() => <Button>Join Us on Our Mission</Button>}
+          renderButton={() => (
+            <Button data-aos="fade-up" data-aos-delay="600">
+              Join Us on Our Mission
+            </Button>
+          )}
         />
       </div>
 

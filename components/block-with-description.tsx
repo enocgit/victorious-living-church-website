@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils";
+import { cn, omitTextProp } from "@/lib/utils";
 import React from "react";
 import { Typography } from "./ui/typography";
 
@@ -11,6 +11,7 @@ type Props = {
   classNames?: {
     title?: string;
   };
+  descriptionProps?: React.ComponentProps<typeof Typography>;
 };
 
 export default function BlockWithDescription({
@@ -20,12 +21,17 @@ export default function BlockWithDescription({
   children,
   className,
   classNames,
+  descriptionProps,
 }: Props) {
   return (
     <div className={cn("space-y-7", className)}>
       <article className={cn("max-w-[502px] space-y-7", classNames?.title)}>
         {renderTitle()}
-        {renderDescription && <Typography>{renderDescription()}</Typography>}
+        {renderDescription && (
+          <Typography {...omitTextProp(descriptionProps)}>
+            {renderDescription()}
+          </Typography>
+        )}
       </article>
       {children}
       {renderButton && renderButton()}
