@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useState } from "react";
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -10,11 +12,57 @@ import Link from "next/link";
 import { links } from "@/lib/links";
 import { Typography } from "./ui/typography";
 import { Button } from "./ui/button";
-import { MobileMenu } from "./ui/mobile-menu";
+import { MobileMenu } from "./mobile-menu";
+import { motion } from "framer-motion";
+import { cn } from "@/lib/utils";
 
 export default function Header() {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 112) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", () => {});
+    };
+  }, []);
+
   return (
-    <header className="flex h-28 items-center justify-between px-6 shadow">
+    <motion.header
+      className={cn(
+        "bg-background z-50 flex h-28 w-full items-center justify-between px-6 shadow",
+      )}
+      initial="initial"
+      animate={isScrolled ? "scrolled" : "default"}
+      transition={{ duration: 0.5 }}
+      variants={{
+        initial: {
+          opacity: 0,
+          y: -20,
+        },
+        default: {
+          opacity: [0, 1],
+          y: [-20, 0],
+        },
+        scrolled: {
+          opacity: 1,
+          y: [-112, 0],
+          position: "sticky",
+          top: 0,
+          right: 0,
+          left: 0,
+          zIndex: 50,
+        },
+      }}
+    >
       {/* Logo */}
       <Link href="/" className="xsm:mr-10 mr-5 sm:mr-0">
         {/* <Image src="/logo.png" alt="logo" width={100} height={100} /> */}{" "}
@@ -47,6 +95,6 @@ export default function Header() {
         </Link>
         <MobileMenu />
       </div>
-    </header>
+    </motion.header>
   );
 }

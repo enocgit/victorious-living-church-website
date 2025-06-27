@@ -87,8 +87,8 @@ export default function Footer() {
                 <Image
                   src={`https://simpleicons.org/icons/facebook.svg`}
                   alt="Facebook"
-                  width={18}
-                  height={18}
+                  width={24}
+                  height={24}
                   className="invert"
                 />
               </Link>
@@ -96,8 +96,8 @@ export default function Footer() {
                 <Image
                   src={`https://simpleicons.org/icons/instagram.svg`}
                   alt="Instagram"
-                  width={18}
-                  height={18}
+                  width={24}
+                  height={24}
                   className="invert"
                 />
               </Link>
