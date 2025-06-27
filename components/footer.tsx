@@ -8,7 +8,7 @@ import { links } from "@/lib/links";
 
 export default function Footer() {
   return (
-    <footer className="relative">
+    <footer className="mt-vertical relative">
       <Image
         src={FooterImage}
         alt="Footer Background"

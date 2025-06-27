@@ -63,7 +63,11 @@ function MobileMenu() {
                 }}
                 style={{ listStyle: "none" }}
               >
-                <Link href={link.href} className="uppercase">
+                <Link
+                  href={link.href}
+                  onClick={() => setOpen(false)}
+                  className="uppercase"
+                >
                   {link.label}
                 </Link>
               </motion.li>

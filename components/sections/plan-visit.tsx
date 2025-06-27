@@ -28,7 +28,7 @@ const VisitInfo = ({
 export default function PlanVisit() {
   return (
     <section className="">
-      <div className="py-vertical">
+      <div className="pt-vertical">
         <div className="wrapper grid grid-cols-1 items-center gap-7 lg:grid-cols-2">
           <BlockWithDescription
             renderTitle={() => (
@@ -91,7 +91,7 @@ export default function PlanVisit() {
               </VisitInfo>
               <VisitInfo
                 icon={
-                  <Shirt size={37} className="shrink-0 text-[#240C00]/80" />
+                  <Shirt size={37} className="text-foreground/80 shrink-0" />
                 }
                 title="What to Wear"
               >

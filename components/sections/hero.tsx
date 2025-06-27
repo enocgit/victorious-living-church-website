@@ -11,7 +11,7 @@ export default function Hero() {
       id="hero"
       className="relative flex h-[calc(100svh-7rem)] w-full items-center text-white"
     >
-      <div className="absolute inset-0 z-10 bg-[#240C00]/50" />
+      <div className="bg-foreground/50 absolute inset-0 z-10" />
       <Image
         src={heroImage}
         alt="Hero"
