@@ -15,20 +15,10 @@ export default function AboutSection() {
           alt="About"
           width={1200}
           height={756}
-          className="hidden h-[756px] w-[610px] object-cover md:inline"
+          className="h-[300px] w-full object-cover md:h-[756px] md:w-[610px]"
           data-aos="fade-right"
           data-aos-duration="3000"
-          data-aos-anchor-placement="top-center"
-        />
-        {/* Mobile Image -- to remove animation anchor */}
-        <Image
-          src={aboutImage}
-          alt="About"
-          width={1200}
-          height={756}
-          className="h-[300px] w-full object-cover md:hidden"
-          data-aos="fade-right"
-          data-aos-duration="3000"
+          data-aos-anchor-placement="top-bottom"
         />
         <BlockWithDescription
           renderTitle={() => (

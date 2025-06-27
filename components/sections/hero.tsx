@@ -35,7 +35,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative flex h-[60svh] items-center lg:h-[calc(100svh-7rem)]"
+      className="relative flex h-[80svh] items-center lg:h-[calc(100svh-7rem)]"
     >
       {/* Overlay */}
       <div className="bg-foreground/50 absolute inset-0 z-20" />
@@ -49,8 +49,8 @@ export default function Hero() {
           }}
           renderTitle={() => (
             <TitleWithSubheading
-              title="Be the Light. Live the Word"
               subheading="Sharing the Love of Christ with every Soul"
+              title="The Holy Spirit is Our Helper"
               titleVariant="h1"
               subheadingProps={
                 { "data-aos": "fade-up" } as unknown as React.ComponentProps<
@@ -76,7 +76,7 @@ export default function Hero() {
 
       {/* Carousel */}
       <div className="embla absolute inset-0 z-10 size-full" ref={emblaRef}>
-        <div className="embla__container h-[calc(100svh-7rem)]">
+        <div className="embla__container h-[80svh] lg:h-[calc(100svh-7rem)]">
           {SLIDES.map((slide, idx) => (
             <div key={idx} className="embla__slide">
               {selectedIndex === idx && (
@@ -92,15 +92,17 @@ export default function Hero() {
             </div>
           ))}
         </div>
-        <div className="embla__dots wrapper">
-          {scrollSnaps.map((_, index) => (
-            <DotButton
-              key={index}
-              onClick={() => onDotButtonClick(index)}
-              className={`embla__dot ${index === selectedIndex ? "embla__dot--selected" : ""}`}
-            />
-          ))}
-        </div>
+      </div>
+
+      {/* Pagination Bullets - moved outside carousel container */}
+      <div className="embla__dots wrapper absolute top-5/12 w-svw">
+        {scrollSnaps.map((_, index) => (
+          <DotButton
+            key={index}
+            onClick={() => onDotButtonClick(index)}
+            className={`embla__dot ${index === selectedIndex ? "embla__dot--selected" : ""}`}
+          />
+        ))}
       </div>
     </section>
   );

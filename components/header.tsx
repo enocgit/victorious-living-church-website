@@ -38,7 +38,7 @@ export default function Header() {
   return (
     <motion.header
       className={cn(
-        "bg-background z-50 flex h-28 w-full items-center justify-between px-6 shadow",
+        "bg-background z-50 flex h-20 w-full items-center justify-between px-6 shadow sm:h-28",
       )}
       initial="initial"
       animate={isScrolled ? "scrolled" : "default"}
