@@ -1,0 +1,45 @@
+.embla {
+  overflow: hidden;
+}
+.embla__viewport {
+  overflow: hidden;
+}
+.embla__container {
+  display: flex;
+}
+.embla__slide {
+  flex: 0 0 100%;
+  min-width: 0;
+}
+
+.embla__controls {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  justify-content: space-between;
+  gap: 1.2rem;
+  margin-top: 1.8rem;
+}
+
+.embla__dots {
+  display: flex;
+  margin-top: 1rem;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+  z-index: 10;
+  bottom: 73px;
+}
+.embla__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ccc;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.embla__dot--selected {
+  background-color: #fff;
+  width: 13px;
+  height: 13px;
+}

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist_Mono, Kumbh_Sans, Nunito } from "next/font/google";
 import "./globals.css";
+import "../styles/embla.css";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 
