@@ -43,7 +43,7 @@ export default function ContactInfo() {
             renderTitle={() => (
               <TitleWithSubheading
                 subheading="Contact Details"
-                title="We Are Always Happy to Assist You"
+                title="We're Here to Help You Anytime"
               />
             )}
           ></BlockWithDescription>
@@ -53,7 +53,7 @@ export default function ContactInfo() {
             className="xsm:grid-cols-2 grid grid-cols-1 gap-x-4.5 gap-y-7"
           >
             <ContactInfoItem
-              title="Number"
+              title="Phone"
               renderContent={() => (
                 <Link href={`tel:${contact.phone.original}`}>
                   <Typography className="font-medium">
@@ -63,7 +63,7 @@ export default function ContactInfo() {
               )}
             >
               <article className="space-y-4">
-                <Typography>Office Hours:</Typography>
+                <Typography>Visit Us:</Typography>
                 <Typography>Monday – Friday: 9 AM – 5 PM</Typography>
                 <Typography>Sunday Service: 8:30 AM - 11:30 AM</Typography>
               </article>

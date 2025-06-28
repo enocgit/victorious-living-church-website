@@ -14,6 +14,8 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "./ui/textarea";
+import { Checkbox } from "./ui/checkbox";
+import { Label } from "./ui/label";
 
 const formSchema = z.object({
   name: z.string().min(1, {
@@ -39,6 +41,7 @@ const formSchema = z.object({
   message: z.string().min(1, {
     message: "Message is required",
   }),
+  isPrayerRequest: z.boolean().optional(),
 });
 
 export default function ContactForm() {
@@ -49,6 +52,7 @@ export default function ContactForm() {
       email: "",
       phone: "",
       message: "",
+      isPrayerRequest: false,
     },
   });
 
@@ -111,6 +115,29 @@ export default function ContactForm() {
                 <Textarea placeholder="Message" {...field} />
               </FormControl>
               <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="isPrayerRequest"
+          render={({ field }) => (
+            <FormItem
+              className="col-span-full"
+              title="Check the box if this is a prayer request"
+            >
+              <FormControl>
+                <div className="flex items-center space-x-2">
+                  <Checkbox
+                    id="isPrayerRequest"
+                    checked={field.value}
+                    onCheckedChange={field.onChange}
+                  />
+                  <Label htmlFor="isPrayerRequest">
+                    This is a prayer request
+                  </Label>
+                </div>
+              </FormControl>
             </FormItem>
           )}
         />
