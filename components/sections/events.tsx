@@ -77,8 +77,8 @@ export default function Events() {
         <BlockWithDescription
           renderTitle={() => (
             <TitleWithSubheading
-              title="Upcoming Events"
               subheading="Stay Connected"
+              title="Upcoming Events"
               subheadingProps={
                 {
                   "data-aos": "fade-up",
