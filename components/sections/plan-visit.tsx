@@ -4,6 +4,7 @@ import TitleWithSubheading from "../title-with-subheading";
 import { Button } from "../ui/button";
 import { Typography } from "../ui/typography";
 import { Blocks, CalendarClock, MapPinHouse, Shirt } from "lucide-react";
+import { contact } from "@/lib/content";
 
 const VisitInfo = ({
   icon,
@@ -27,8 +28,8 @@ const VisitInfo = ({
 
 export default function PlanVisit() {
   return (
-    <section className="">
-      <div className="pt-vertical">
+    <section>
+      <div className="py-vertical">
         <div className="wrapper grid grid-cols-1 items-center gap-7 lg:grid-cols-2">
           <BlockWithDescription
             renderTitle={() => (
@@ -81,7 +82,7 @@ export default function PlanVisit() {
                 title="Location"
               >
                 <Typography className="text-muted-foreground">
-                  Ottaa City, Kasoa
+                  {contact.address}
                 </Typography>
               </VisitInfo>
               <VisitInfo

@@ -12,6 +12,8 @@ import { Typography } from "../ui/typography";
 import Image, { StaticImageData } from "next/image";
 import EventSunday from "@/public/assets/upcoming-event-sunday.jpg";
 import EventFundraising from "@/public/assets/upcoming-event-fund.jpg";
+import BackgroundDesign from "@/public/assets/background-design.png";
+import { contact } from "@/lib/content";
 
 const EventCard = ({
   dateTime,
@@ -63,8 +65,15 @@ const EventCard = ({
 
 export default function Events() {
   return (
-    <section className="bg-[#F1EFEB]">
-      <div className="wrapper py-vertical">
+    <section className="relative">
+      <Image
+        src={BackgroundDesign}
+        alt="Background Design"
+        fill
+        className="inset-0 z-0 object-cover"
+      />
+      <div className="absolute inset-0 z-10 bg-[#F1EFEB]/50" />
+      <div className="wrapper py-vertical relative z-10">
         <BlockWithDescription
           renderTitle={() => (
             <TitleWithSubheading
@@ -104,13 +113,13 @@ export default function Events() {
             <EventCard
               dateTime={new Date("Sun Jun 29 2025 08:30")}
               name="Sunday Service"
-              location="Kasoa, Ottaa City, Ghana"
+              location={contact.address}
               image={EventSunday}
             />
             <EventCard
               dateTime={new Date("Sun Oct 12 2025 08:30")}
               name="Fundraising"
-              location="Kasoa, Ottaa City, Ghana"
+              location={contact.address}
               image={EventFundraising}
             />
           </div>

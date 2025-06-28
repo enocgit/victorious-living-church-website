@@ -5,10 +5,11 @@ import { Mail, Phone } from "lucide-react";
 import Image from "next/image";
 import FooterImage from "@/public/assets/footer-background.jpg";
 import { links } from "@/lib/links";
+import { contact, social } from "@/lib/content";
 
 export default function Footer() {
   return (
-    <footer className="mt-vertical relative">
+    <footer className="relative">
       <Image
         src={FooterImage}
         alt="Footer Background"
@@ -55,9 +56,7 @@ export default function Footer() {
                     </Typography>
                   </li>
                   <li>
-                    <Typography className="text-muted/70">
-                      Kasoa, Ghana
-                    </Typography>
+                    <Typography className="text-muted/70">Ghana</Typography>
                   </li>
                 </ul>
               </section>
@@ -70,17 +69,17 @@ export default function Footer() {
                 <ul className="space-y-4">
                   <li className="flex items-center gap-5">
                     <Mail size={14} className="text-accent shrink-0" />
-                    <Link href="mailto:info@vlcig.org">
+                    <Link href={`mailto:${contact.email.info}`}>
                       <Typography className="text-muted/70">
-                        info@vlcig.org
+                        {contact.email.info}
                       </Typography>
                     </Link>
                   </li>
                   <li className="flex items-center gap-5">
                     <Phone size={14} className="text-accent shrink-0" />
-                    <Link href="tel:+233553972383">
+                    <Link href={`tel:${contact.phone.original}`}>
                       <Typography className="text-muted/70">
-                        + 233 553-972-383
+                        {contact.phone.formatted}
                       </Typography>
                     </Link>
                   </li>
@@ -89,34 +88,23 @@ export default function Footer() {
             </div>
           </div>
           <hr className="border-muted-foreground mt-20 mb-11" />
-          <div
-            className="flex flex-wrap items-center justify-between gap-5"
-            // data-aos="fade-up"
-            // data-aos-delay="500"
-          >
+          <div className="flex flex-wrap items-center justify-between gap-5">
             <Typography className="text-muted/70">
               &copy; {new Date().getFullYear()} Victorious Living Church
               International. All rights reserved.
             </Typography>
             <div className="flex items-center gap-5">
-              <Link href="/">
-                <Image
-                  src={`https://simpleicons.org/icons/facebook.svg`}
-                  alt="Facebook"
-                  width={24}
-                  height={24}
-                  className="invert"
-                />
-              </Link>
-              <Link href="/">
-                <Image
-                  src={`https://simpleicons.org/icons/instagram.svg`}
-                  alt="Instagram"
-                  width={24}
-                  height={24}
-                  className="invert"
-                />
-              </Link>
+              {Object.entries(social).map(([key, value]) => (
+                <Link key={key} href={value}>
+                  <Image
+                    src={`https://simpleicons.org/icons/${key}.svg`}
+                    alt={key}
+                    width={24}
+                    height={24}
+                    className="invert"
+                  />
+                </Link>
+              ))}
             </div>
           </div>
         </div>
