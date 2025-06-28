@@ -22,6 +22,20 @@ const formSchema = z.object({
   email: z.string().email({
     message: "Email is not valid.",
   }),
+  phone: z
+    .string()
+    .optional()
+    .refine(
+      (val) => {
+        if (val) {
+          return /^[\d+]+$/.test(val);
+        }
+        return true;
+      },
+      {
+        message: "Phone number is not valid.",
+      },
+    ),
   message: z.string().min(1, {
     message: "Message is required",
   }),
@@ -33,6 +47,7 @@ export default function ContactForm() {
     defaultValues: {
       name: "",
       email: "",
+      phone: "",
       message: "",
     },
   });
@@ -43,7 +58,10 @@ export default function ContactForm() {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-7">
+      <form
+        onSubmit={form.handleSubmit(onSubmit)}
+        className="grid grid-cols-1 gap-7 sm:grid-cols-2 md:grid-cols-3"
+      >
         <FormField
           control={form.control}
           name="name"
@@ -62,7 +80,23 @@ export default function ContactForm() {
           render={({ field }) => (
             <FormItem>
               <FormControl>
-                <Input type="email" placeholder="Email" {...field} />
+                <Input type="email" placeholder="Email Address" {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="phone"
+          render={({ field }) => (
+            <FormItem>
+              <FormControl>
+                <Input
+                  type="tel"
+                  placeholder="Phone Number (optional)"
+                  {...field}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -72,7 +106,7 @@ export default function ContactForm() {
           control={form.control}
           name="message"
           render={({ field }) => (
-            <FormItem>
+            <FormItem className="col-span-full">
               <FormControl>
                 <Textarea placeholder="Message" {...field} />
               </FormControl>
@@ -80,7 +114,9 @@ export default function ContactForm() {
             </FormItem>
           )}
         />
-        <Button type="submit">Leave Us a Message</Button>
+        <Button type="submit" className="max-w-60">
+          Leave Us a Message
+        </Button>
       </form>
     </Form>
   );

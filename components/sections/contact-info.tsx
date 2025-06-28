@@ -44,16 +44,6 @@ export default function ContactInfo() {
               <TitleWithSubheading
                 subheading="Contact Details"
                 title="We Are Always Happy to Assist You"
-                subheadingProps={
-                  {
-                    "data-aos": "fade-up",
-                  } as unknown as React.ComponentProps<typeof Typography>
-                }
-                titleProps={
-                  {
-                    "data-aos": "fade-up",
-                  } as unknown as React.ComponentProps<typeof Typography>
-                }
               />
             )}
           ></BlockWithDescription>
