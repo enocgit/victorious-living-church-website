@@ -116,7 +116,15 @@ export default function Events() {
             data-aos-duration="2000"
           >
             <EventCard
-              dateTime={new Date("Sun Jun 29 2025 08:30")}
+              dateTime={(() => {
+                const now = new Date();
+                const today = now.getDay(); // 0 = Sunday, 1 = Monday, etc.
+                const daysUntilSunday = today === 0 ? 0 : 7 - today;
+                const nextSunday = new Date(now);
+                nextSunday.setDate(now.getDate() + daysUntilSunday);
+                nextSunday.setHours(8, 30, 0, 0);
+                return nextSunday;
+              })()}
               name="Sunday Service"
               location={contact.address}
               image={EventSunday}
