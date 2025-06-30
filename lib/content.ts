@@ -14,3 +14,8 @@ export const social = {
   facebook: "https://www.facebook.com/vlcig.org",
   instagram: "https://www.instagram.com/vlcig.org",
 };
+
+export const church = {
+  title: "Victorious Living Church International",
+  abbreviation: "VLCI",
+};

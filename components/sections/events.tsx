@@ -29,13 +29,18 @@ const EventCard = ({
   return (
     <Card className="rounded-none p-0">
       <CardHeader className="sr-only">
-        <CardTitle></CardTitle>
-        <CardDescription></CardDescription>
+        <CardTitle className="sr-only">{name}</CardTitle>
+        <CardDescription className="sr-only">{location}</CardDescription>
       </CardHeader>
-      <CardContent className="p-0">
+      <CardContent className="overflow-hidden p-0">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
           <div className="relative w-full max-sm:aspect-video">
-            <Image src={image} alt="Event" fill className="object-cover" />
+            <Image
+              src={image}
+              alt="Event"
+              fill
+              className="object-cover transition-all duration-300 hover:scale-105"
+            />
           </div>
           <div className="px-5 py-6 sm:px-12 sm:py-14 md:col-span-2">
             <Typography
