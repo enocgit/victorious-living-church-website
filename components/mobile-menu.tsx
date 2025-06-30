@@ -17,6 +17,7 @@ import { motion } from "framer-motion";
 import { church } from "@/lib/content";
 import logo from "@/public/assets/logo.png";
 import { Separator } from "./ui/separator";
+import { Typography } from "./ui/typography";
 
 function MobileMenu() {
   const [open, setOpen] = useState(false);
@@ -31,8 +32,16 @@ function MobileMenu() {
         className="bg-foreground text-background border-none"
       >
         <SheetHeader>
-          <div className="bg-background border-muted-foreground flex w-fit items-center justify-center rounded-full p-2">
-            <Image src={logo} alt="logo" width={24} height={24} />
+          <div className="flex items-center gap-2">
+            <div className="bg-background border-muted-foreground flex w-fit items-center justify-center rounded-full p-2">
+              <Image src={logo} alt="logo" width={24} height={24} />
+            </div>
+            <Typography
+              variant="body3"
+              className="max-xsm:text-[9px] text-background max-w-[150px]"
+            >
+              {church.title}
+            </Typography>
           </div>
           <Separator className="bg-muted-foreground mt-10" />
           <SheetTitle className="sr-only">{church.title}</SheetTitle>

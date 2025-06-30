@@ -95,8 +95,23 @@ export default function Header() {
         }}
       >
         {/* Logo */}
-        <Link href="/" className="xsm:mr-10 mr-5 sm:mr-0">
-          <Image src={logo} alt="logo" width={32} height={32} />
+        <Link
+          href="/"
+          className="xsm:mr-10 mr-5 flex items-center gap-2 sm:mr-0"
+        >
+          <Image
+            src={logo}
+            alt="logo"
+            className="h-8 w-8"
+            width={32}
+            height={32}
+          />
+          <Typography
+            variant="body3"
+            className="max-xsm:text-[9px] max-w-[150px]"
+          >
+            {church.title}
+          </Typography>
         </Link>
         <nav className="hidden lg:block">
           {/* Navigation Menu */}
