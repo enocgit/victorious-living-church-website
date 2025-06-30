@@ -16,9 +16,6 @@ export default function AboutSection() {
           width={1200}
           height={756}
           className="h-[300px] w-full object-cover md:h-[756px] md:w-[610px]"
-          data-aos="fade-right"
-          data-aos-duration="3000"
-          data-aos-anchor-placement="top-bottom"
         />
         <BlockWithDescription
           renderTitle={() => (

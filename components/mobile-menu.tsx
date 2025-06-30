@@ -14,6 +14,9 @@ import Link from "next/link";
 import { links } from "@/lib/links";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { church } from "@/lib/content";
+import logo from "@/public/assets/logo.png";
+import { Separator } from "./ui/separator";
 
 function MobileMenu() {
   const [open, setOpen] = useState(false);
@@ -28,13 +31,15 @@ function MobileMenu() {
         className="bg-foreground text-background border-none"
       >
         <SheetHeader>
-          <SheetTitle className="text-muted-foreground border-muted-foreground border-b pt-20 pb-5">
-            VLCI
-          </SheetTitle>
+          <div className="bg-background border-muted-foreground flex w-fit items-center justify-center rounded-full p-2">
+            <Image src={logo} alt="logo" width={24} height={24} />
+          </div>
+          <Separator className="bg-muted-foreground mt-10" />
+          <SheetTitle className="sr-only">{church.title}</SheetTitle>
         </SheetHeader>
         <div className="px-5">
           <motion.ul
-            className="flex flex-col gap-4"
+            className="flex flex-col gap-8"
             initial="closed"
             animate={open ? "open" : "closed"}
             variants={{

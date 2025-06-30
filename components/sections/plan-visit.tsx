@@ -39,16 +39,6 @@ export default function PlanVisit() {
                 classNames={{
                   subheading: "text-primary",
                 }}
-                subheadingProps={
-                  {
-                    "data-aos": "fade-down",
-                  } as unknown as React.ComponentProps<typeof Typography>
-                }
-                titleProps={
-                  {
-                    "data-aos": "fade-down",
-                  } as unknown as React.ComponentProps<typeof Typography>
-                }
               />
             )}
             renderDescription={() => (
@@ -59,11 +49,6 @@ export default function PlanVisit() {
                 open arms.
               </>
             )}
-            descriptionProps={
-              {
-                "data-aos": "fade-down",
-              } as unknown as React.ComponentProps<typeof Typography>
-            }
             renderButton={() => <Button>I&apos;m Planning to Visit</Button>}
           >
             <div

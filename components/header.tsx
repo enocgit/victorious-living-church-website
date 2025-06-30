@@ -19,13 +19,14 @@ import { church, contact, social } from "@/lib/content";
 import { Headset, Heart, Mail } from "lucide-react";
 import { Separator } from "./ui/separator";
 import Image from "next/image";
+import logo from "@/public/assets/logo.png";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 112) {
+      if (window.scrollY > 96) {
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
@@ -42,19 +43,17 @@ export default function Header() {
   return (
     <>
       {/* Header Banner */}
-      <div className="bg-background flex items-center justify-between border-b border-b-neutral-200/60 px-9 py-2.5">
-        <div className="flex items-center gap-10">
-          <Typography variant="body2" className="font-bold">
-            Welcome to {church.title}
-          </Typography>
-          <div className="flex items-center gap-5 font-bold">
-            <Mail size={14} className="text-accent shrink-0" />
-            <Link href={`mailto:${contact.email.info}`}>
-              <Typography variant="body2">{contact.email.info}</Typography>
-            </Link>
-          </div>
+      <div className="bg-background hidden flex-wrap items-center gap-5 border-b border-b-neutral-200/60 px-6 py-2.5 sm:flex md:gap-10 md:px-9">
+        <Typography variant="body2" className="font-bold">
+          Welcome to {church.title}
+        </Typography>
+        <div className="flex items-center gap-5 font-bold">
+          <Mail size={14} className="text-accent shrink-0" />
+          <Link href={`mailto:${contact.email.info}`}>
+            <Typography variant="body2">{contact.email.info}</Typography>
+          </Link>
         </div>
-        <div className="flex items-center gap-5">
+        <div className="ml-auto flex items-center gap-5">
           {Object.entries(social).map(([key, value]) => (
             <Link key={key} href={value}>
               <Image
@@ -70,7 +69,7 @@ export default function Header() {
       {/* Header */}
       <motion.header
         className={cn(
-          "bg-background z-50 flex h-20 w-full items-center justify-between px-6 shadow sm:h-28",
+          "bg-background z-50 flex h-20 w-full items-center justify-between px-6 shadow sm:h-24",
         )}
         initial="initial"
         animate={isScrolled ? "scrolled" : "default"}
@@ -97,11 +96,7 @@ export default function Header() {
       >
         {/* Logo */}
         <Link href="/" className="xsm:mr-10 mr-5 sm:mr-0">
-          {/* <Image src="/logo.png" alt="logo" width={100} height={100} /> */}{" "}
-          {/**TODO: Add logo */}
-          <Typography variant="h6" className="max-w-[200px]">
-            VLCI
-          </Typography>
+          <Image src={logo} alt="logo" width={32} height={32} />
         </Link>
         <nav className="hidden lg:block">
           {/* Navigation Menu */}
@@ -120,9 +115,9 @@ export default function Header() {
             </NavigationMenuList>
           </NavigationMenu>
         </nav>
-        {/* Give Now Button */}
         <div className="flex h-full items-center gap-10">
-          <div className="bg-accent/15 flex h-full items-center gap-5 px-10 py-5">
+          {/* Call Us */}
+          <div className="bg-accent/15 hidden h-full items-center gap-5 px-10 py-5 md:flex">
             <div className="bg-background rounded-full p-3">
               <Headset className="text-accent" size={37} />
             </div>
@@ -140,7 +135,8 @@ export default function Header() {
             orientation="vertical"
             className="data-[orientation=vertical]:h-6/12"
           />
-          <div>
+          <div className="flex items-center gap-8">
+            {/* Give Now Button */}
             <Link href="/#">
               <Button className="bg-accent" size="sm">
                 <Heart className="fill-current" />

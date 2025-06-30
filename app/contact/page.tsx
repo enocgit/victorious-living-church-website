@@ -3,7 +3,6 @@ import BreadcrumbBanner from "@/components/breadcrumb-banner";
 import ContactForm from "@/components/contact-form";
 import ContactInfo from "@/components/sections/contact-info";
 import TitleWithSubheading from "@/components/title-with-subheading";
-import { Typography } from "@/components/ui/typography";
 import React from "react";
 
 export default function ContactPage() {
@@ -16,16 +15,6 @@ export default function ContactPage() {
             <TitleWithSubheading
               subheading="We'd love to hear from you"
               title="Get in Touch with Us"
-              subheadingProps={
-                {
-                  "data-aos": "fade-up",
-                } as unknown as React.ComponentProps<typeof Typography>
-              }
-              titleProps={
-                {
-                  "data-aos": "fade-up",
-                } as unknown as React.ComponentProps<typeof Typography>
-              }
               classNames={{
                 subheading: "text-primary",
               }}
@@ -38,12 +27,6 @@ export default function ContactPage() {
               will connect with you as soon as possible.
             </>
           )}
-          descriptionProps={
-            {
-              "data-aos": "fade-up",
-              "data-aos-delay": "200",
-            } as unknown as React.ComponentProps<typeof Typography>
-          }
         >
           <div data-aos="fade-up" data-aos-duration="2000">
             <ContactForm />
