@@ -34,6 +34,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <meta name="apple-mobile-web-app-title" content="Vlcig" />
+      </head>
       <body
         className={`${geistMono.variable} ${kumbhSans.variable} ${nunito.variable} flex min-h-screen flex-col antialiased`}
       >
